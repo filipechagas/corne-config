@@ -50,52 +50,52 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            KC_LGUI , MO(1) , KC_SPC ,     RGUI_T(KC_ENT) , MO(2) , KC_RALT
 ),
 
-//        ┌──────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────┐   ┌──────┬───────┬─────┬──────┬────┬──────┐
-//        │ tab  │        1        │        2        │        3        │        4        │  5  │   │  6   │   7   │  8  │  9   │ 0  │ bspc │
-//        ├──────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────┤   ├──────┼───────┼─────┼──────┼────┼──────┤
-//        │      │ MT(MOD_LGUI, a) │ MT(MOD_LALT, s) │ MT(MOD_LSFT, d) │ MT(MOD_LCTL, f) │ no  │   │ left │ down  │ up  │ rght │ no │  no  │
-//        ├──────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────┤   ├──────┼───────┼─────┼──────┼────┼──────┤
-//        │ lsft │       no        │       no        │       no        │       no        │ no  │   │  no  │  no   │ no  │  no  │ no │  no  │
-//        └──────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────┤   ├──────┼───────┼─────┼──────┴────┴──────┘
-//                                                   │                 │                 │     │   │      │ MO(3) │     │
-//                                                   └─────────────────┴─────────────────┴─────┘   └──────┴───────┴─────┘
+//        ┌──────┬──────┬──────┬──────┬──────┬─────┐   ┌──────┬───────┬───────────────┬───────────────┬────┬──────┐
+//        │ tab  │  1   │  2   │  3   │  4   │  5  │   │  6   │   7   │       8       │       9       │ 0  │ bspc │
+//        ├──────┼──────┼──────┼──────┼──────┼─────┤   ├──────┼───────┼───────────────┼───────────────┼────┼──────┤
+//        │      │ lgui │ lalt │ lsft │ lctl │ no  │   │ left │ down  │      up       │     rght      │ no │  no  │
+//        ├──────┼──────┼──────┼──────┼──────┼─────┤   ├──────┼───────┼───────────────┼───────────────┼────┼──────┤
+//        │ lsft │  no  │  no  │  no  │  no  │ no  │   │  no  │  no   │ LGUI(LSFT([)) │ LGUI(LSFT(])) │ no │  no  │
+//        └──────┴──────┴──────┼──────┼──────┼─────┤   ├──────┼───────┼───────────────┼───────────────┴────┴──────┘
+//                             │      │      │     │   │      │ MO(3) │               │
+//                             └──────┴──────┴─────┘   └──────┴───────┴───────────────┘
 [1] = LAYOUT_split_3x6_3(
-      KC_TAB  , KC_1               , KC_2               , KC_3               , KC_4               , KC_5    ,     KC_6    , KC_7    , KC_8    , KC_9     , KC_0    , KC_BSPC,
-      KC_TRNS , MT(MOD_LGUI, KC_A) , MT(MOD_LALT, KC_S) , MT(MOD_LSFT, KC_D) , MT(MOD_LCTL, KC_F) , XXXXXXX ,     KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , XXXXXXX , XXXXXXX,
-      KC_LSFT , XXXXXXX            , XXXXXXX            , XXXXXXX            , XXXXXXX            , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX  , XXXXXXX , XXXXXXX,
-                                                          KC_TRNS            , _______            , KC_TRNS ,     KC_TRNS , MO(3)   , KC_TRNS
+      KC_TAB  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    ,     KC_6    , KC_7    , KC_8                , KC_9                , KC_0    , KC_BSPC,
+      KC_TRNS , KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , XXXXXXX ,     KC_LEFT , KC_DOWN , KC_UP               , KC_RIGHT            , XXXXXXX , XXXXXXX,
+      KC_LSFT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , LGUI(LSFT(KC_LBRC)) , LGUI(LSFT(KC_RBRC)) , XXXXXXX , XXXXXXX,
+                                    KC_TRNS , _______ , KC_TRNS ,     KC_TRNS , MO(3)   , KC_TRNS
 ),
 
-//        ┌──────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────┐   ┌─────┬─────┬─────┬───┬───┬──────┐
-//        │ tab  │        !        │        @        │        #        │        $        │  %  │   │  ^  │  &  │  *  │ ( │ ) │ bspc │
-//        ├──────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────┤   ├─────┼─────┼─────┼───┼───┼──────┤
-//        │      │ MT(MOD_LGUI, a) │ MT(MOD_LALT, s) │ MT(MOD_LSFT, d) │ MT(MOD_LCTL, f) │ no  │   │  -  │  =  │  [  │ ] │ \ │  `   │
-//        ├──────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────┤   ├─────┼─────┼─────┼───┼───┼──────┤
-//        │ lsft │       no        │       no        │       no        │       no        │ no  │   │  _  │  +  │  {  │ } │ | │  ~   │
-//        └──────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────┤   ├─────┼─────┼─────┼───┴───┴──────┘
-//                                                   │                 │      MO(3)      │     │   │     │     │     │
-//                                                   └─────────────────┴─────────────────┴─────┘   └─────┴─────┴─────┘
+//        ┌──────┬──────┬──────┬──────┬───────┬─────┐   ┌─────┬─────┬─────┬───┬───┬──────┐
+//        │ tab  │  !   │  @   │  #   │   $   │  %  │   │  ^  │  &  │  *  │ ( │ ) │ bspc │
+//        ├──────┼──────┼──────┼──────┼───────┼─────┤   ├─────┼─────┼─────┼───┼───┼──────┤
+//        │      │ lgui │ lalt │ lsft │ lctl  │ no  │   │  -  │  =  │  [  │ ] │ \ │  `   │
+//        ├──────┼──────┼──────┼──────┼───────┼─────┤   ├─────┼─────┼─────┼───┼───┼──────┤
+//        │ lsft │  no  │  no  │  no  │  no   │ no  │   │  _  │  +  │  {  │ } │ | │  ~   │
+//        └──────┴──────┴──────┼──────┼───────┼─────┤   ├─────┼─────┼─────┼───┴───┴──────┘
+//                             │      │ MO(3) │     │   │     │     │     │
+//                             └──────┴───────┴─────┘   └─────┴─────┴─────┘
 [2] = LAYOUT_split_3x6_3(
-      KC_TAB  , KC_EXLM            , KC_AT              , KC_HASH            , KC_DLR             , KC_PERC ,     KC_CIRC , KC_AMPR , KC_ASTR , KC_LPRN , KC_RPRN , KC_BSPC,
-      KC_TRNS , MT(MOD_LGUI, KC_A) , MT(MOD_LALT, KC_S) , MT(MOD_LSFT, KC_D) , MT(MOD_LCTL, KC_F) , XXXXXXX ,     KC_MINS , KC_EQL  , KC_LBRC , KC_RBRC , KC_BSLS , KC_GRV ,
-      KC_LSFT , XXXXXXX            , XXXXXXX            , XXXXXXX            , XXXXXXX            , XXXXXXX ,     KC_UNDS , KC_PLUS , KC_LCBR , KC_RCBR , KC_PIPE , KC_TILD,
-                                                          KC_TRNS            , MO(3)              , KC_TRNS ,     KC_TRNS , _______ , KC_TRNS
+      KC_TAB  , KC_EXLM , KC_AT   , KC_HASH , KC_DLR  , KC_PERC ,     KC_CIRC , KC_AMPR , KC_ASTR , KC_LPRN , KC_RPRN , KC_BSPC,
+      KC_TRNS , KC_LGUI , KC_LALT , KC_LSFT , KC_LCTL , XXXXXXX ,     KC_MINS , KC_EQL  , KC_LBRC , KC_RBRC , KC_BSLS , KC_GRV ,
+      KC_LSFT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_UNDS , KC_PLUS , KC_LCBR , KC_RCBR , KC_PIPE , KC_TILD,
+                                    KC_TRNS , MO(3)   , KC_TRNS ,     KC_TRNS , _______ , KC_TRNS
 ),
 
-//        ┌─────────┬─────────┬─────────┬─────────┬─────┬─────┐   ┌─────┬─────┬─────┬────┬────┬────┐
-//        │ QK_BOOT │   no    │   no    │   no    │ no  │ no  │   │ no  │ no  │ no  │ no │ no │ no │
-//        ├─────────┼─────────┼─────────┼─────────┼─────┼─────┤   ├─────┼─────┼─────┼────┼────┼────┤
-//        │ RGB_TOG │ RGB_HUI │ RGB_SAI │ RGB_VAI │ no  │ no  │   │ no  │ no  │ no  │ no │ no │ no │
-//        ├─────────┼─────────┼─────────┼─────────┼─────┼─────┤   ├─────┼─────┼─────┼────┼────┼────┤
-//        │ RGB_MOD │ RGB_HUD │ RGB_SAD │ RGB_VAD │ no  │ no  │   │ no  │ no  │ no  │ no │ no │ no │
-//        └─────────┴─────────┴─────────┼─────────┼─────┼─────┤   ├─────┼─────┼─────┼────┴────┴────┘
-//                                      │         │     │     │   │     │     │     │
-//                                      └─────────┴─────┴─────┘   └─────┴─────┴─────┘
+//        ┌─────────┬─────────┬─────────┬─────────┬─────┬─────┐   ┌─────┬──────┬──────┬────┬────┬────┐
+//        │ QK_BOOT │   no    │   no    │   no    │ no  │ no  │   │ no  │  no  │  no  │ no │ no │ no │
+//        ├─────────┼─────────┼─────────┼─────────┼─────┼─────┤   ├─────┼──────┼──────┼────┼────┼────┤
+//        │ RGB_TOG │ RGB_HUI │ RGB_SAI │ RGB_VAI │ no  │ no  │   │ no  │ vold │ volu │ no │ no │ no │
+//        ├─────────┼─────────┼─────────┼─────────┼─────┼─────┤   ├─────┼──────┼──────┼────┼────┼────┤
+//        │ RGB_MOD │ RGB_HUD │ RGB_SAD │ RGB_VAD │ no  │ no  │   │ no  │ mute │  no  │ no │ no │ no │
+//        └─────────┴─────────┴─────────┼─────────┼─────┼─────┤   ├─────┼──────┼──────┼────┴────┴────┘
+//                                      │         │     │     │   │     │      │      │
+//                                      └─────────┴─────┴─────┘   └─────┴──────┴──────┘
 [3] = LAYOUT_split_3x6_3(
-      QK_BOOT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-      RGB_TOG , RGB_HUI , RGB_SAI , RGB_VAI , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-      RGB_MOD , RGB_HUD , RGB_SAD , RGB_VAD , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-                                    KC_TRNS , _______ , KC_TRNS ,     KC_TRNS , _______ , KC_TRNS
+      QK_BOOT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX           , XXXXXXX         , XXXXXXX , XXXXXXX , XXXXXXX,
+      RGB_TOG , RGB_HUI , RGB_SAI , RGB_VAI , XXXXXXX , XXXXXXX ,     XXXXXXX , KC_AUDIO_VOL_DOWN , KC_AUDIO_VOL_UP , XXXXXXX , XXXXXXX , XXXXXXX,
+      RGB_MOD , RGB_HUD , RGB_SAD , RGB_VAD , XXXXXXX , XXXXXXX ,     XXXXXXX , KC_AUDIO_MUTE     , XXXXXXX         , XXXXXXX , XXXXXXX , XXXXXXX,
+                                    KC_TRNS , _______ , KC_TRNS ,     KC_TRNS , _______           , KC_TRNS
 )
 };
 
