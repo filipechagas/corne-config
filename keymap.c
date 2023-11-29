@@ -50,20 +50,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                        MO(1)              , MO(4)              , MT(MOD_LGUI, KC_SPC) ,     MT(MOD_RGUI, KC_ENT) , MO(2)              , MO(3)                                                                    
 ),
 
-//        ┌──────┬──────┬──────┬──────┬──────┬────┐   ┌───────────────┬─────────┬─────────┬───────────┬─────────┬──────┐
-//        │ tab  │  no  │  no  │  no  │  no  │ no │   │ LGUI(LSFT(z)) │ LGUI(v) │ LGUI(c) │  LGUI(x)  │ LGUI(z) │      │
-//        ├──────┼──────┼──────┼──────┼──────┼────┤   ├───────────────┼─────────┼─────────┼───────────┼─────────┼──────┤
-//        │ esc  │ lctl │ lalt │ lgui │ lsft │ no │   │     left      │  down   │   up    │   rght    │   no    │ caps │
-//        ├──────┼──────┼──────┼──────┼──────┼────┤   ├───────────────┼─────────┼─────────┼───────────┼─────────┼──────┤
-//        │ lsft │  no  │  no  │  no  │  no  │ no │   │      ins      │  home   │ pAGE_UP │ pAGE_DOWN │   end   │      │
-//        └──────┴──────┴──────┼──────┼──────┼────┤   ├───────────────┼─────────┼─────────┼───────────┴─────────┴──────┘
-//                             │  no  │      │ no │   │               │   no    │   no    │                             
-//                             └──────┴──────┴────┘   └───────────────┴─────────┴─────────┘                             
+//        ┌──────┬──────┬──────┬──────┬──────┬────┐   ┌───────────────┬───────────────┬───────────────┬───────────┬─────────┬──────┐
+//        │ tab  │  no  │  no  │  no  │  no  │ no │   │ LGUI(LSFT(z)) │    LGUI(v)    │    LGUI(c)    │  LGUI(x)  │ LGUI(z) │      │
+//        ├──────┼──────┼──────┼──────┼──────┼────┤   ├───────────────┼───────────────┼───────────────┼───────────┼─────────┼──────┤
+//        │ esc  │ lctl │ lalt │ lgui │ lsft │ no │   │     left      │     down      │      up       │   rght    │   no    │ caps │
+//        ├──────┼──────┼──────┼──────┼──────┼────┤   ├───────────────┼───────────────┼───────────────┼───────────┼─────────┼──────┤
+//        │ lsft │  no  │  no  │  no  │  no  │ no │   │      ins      │     home      │    pAGE_UP    │ pAGE_DOWN │   end   │      │
+//        └──────┴──────┴──────┼──────┼──────┼────┤   ├───────────────┼───────────────┼───────────────┼───────────┴─────────┴──────┘
+//                             │      │  no  │ no │   │               │ RGUI(RSFT([)) │ RGUI(RSFT(])) │                             
+//                             └──────┴──────┴────┘   └───────────────┴───────────────┴───────────────┘                             
 [1] = LAYOUT_split_3x6_3(
-      KC_TAB  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     LGUI(LSFT(KC_Z)) , LGUI(KC_V) , LGUI(KC_C) , LGUI(KC_X)   , LGUI(KC_Z) , KC_TRNS,
-      KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_LEFT          , KC_DOWN    , KC_UP      , KC_RIGHT     , XXXXXXX    , KC_CAPS,
-      KC_LSFT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_INS           , KC_HOME    , KC_PAGE_UP , KC_PAGE_DOWN , KC_END     , KC_TRNS,
-                                    XXXXXXX , _______ , XXXXXXX ,     KC_TRNS          , XXXXXXX    , XXXXXXX                                         
+      KC_TAB  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     LGUI(LSFT(KC_Z)) , LGUI(KC_V)          , LGUI(KC_C)          , LGUI(KC_X)   , LGUI(KC_Z) , KC_TRNS,
+      KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_LEFT          , KC_DOWN             , KC_UP               , KC_RIGHT     , XXXXXXX    , KC_CAPS,
+      KC_LSFT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_INS           , KC_HOME             , KC_PAGE_UP          , KC_PAGE_DOWN , KC_END     , KC_TRNS,
+                                    _______ , XXXXXXX , XXXXXXX ,     KC_TRNS          , RGUI(RSFT(KC_LBRC)) , RGUI(RSFT(KC_RBRC))                                      
 ),
 
 //        ┌──────┬───┬───┬───┬───┬───┐   ┌────┬──────┬──────┬──────┬──────┬──────┐
@@ -105,13 +105,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //        ├─────┼──────┼──────┼──────┼──────┼────┤   ├───┼───┼───┼───┼───┼──────┤
 //        │ no  │  no  │  no  │  no  │  no  │ no │   │ ` │ 1 │ 2 │ 3 │ \ │  no  │
 //        └─────┴──────┴──────┼──────┼──────┼────┤   ├───┼───┼───┼───┴───┴──────┘
-//                            │      │  no  │ no │   │ - │ 0 │ . │               
+//                            │  no  │      │ no │   │ - │ 0 │ . │               
 //                            └──────┴──────┴────┘   └───┴───┴───┘               
 [4] = LAYOUT_split_3x6_3(
       KC_TRNS , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_LBRC , KC_7 , KC_8   , KC_9 , KC_RBRC , KC_BSPC,
       KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_EQL  , KC_4 , KC_5   , KC_6 , KC_SCLN , KC_ENT ,
       XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_GRV  , KC_1 , KC_2   , KC_3 , KC_BSLS , XXXXXXX,
-                                    _______ , XXXXXXX , XXXXXXX ,     KC_MINS , KC_0 , KC_DOT                           
+                                    XXXXXXX , _______ , XXXXXXX ,     KC_MINS , KC_0 , KC_DOT                           
 )
 };
 
