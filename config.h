@@ -31,6 +31,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QUICK_TAP_TERM 60
 #define TAPPING_TERM 150
 
+
+#define L_BASE 0
+#define L_NAV 1
+#define L_SYM 2
+#define L_ADJUST 3
+#define L_NUMBER 4
+
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
     #define RGBLIGHT_EFFECT_RAINBOW_MOOD
@@ -47,6 +54,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_SAT_STEP 16
     #define RGBLIGHT_VAL_STEP 12
 #endif
+
 
 // #define RETRO_TAPPING
 // #define PERMISSIVE_HOLD

@@ -35,18 +35,18 @@ uint16_t mod = DEFAULT_MODE;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //        ┌───────────────────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬─────┐   ┌─────┬─────────────────┬─────────────────┬─────────────────┬─────────────────┬──────┐
-//        │                   │        q        │        w        │        e        │        r        │  t  │   │  y  │        u        │        i        │        o        │        p        │ bspc │
+//        │        tab        │        q        │        w        │        e        │        r        │  t  │   │  y  │        u        │        i        │        o        │        p        │ bspc │
 //        ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────┤   ├─────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────┤
 //        │ MT(MOD_LCTL, esc) │ MT(MOD_LCTL, a) │ MT(MOD_LALT, s) │ MT(MOD_LGUI, d) │ MT(MOD_LSFT, f) │  g  │   │  h  │ MT(MOD_RSFT, j) │ MT(MOD_RGUI, k) │ MT(MOD_LALT, l) │ MT(MOD_RCTL, ;) │  '   │
 //        ├───────────────────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼─────┤   ├─────┼─────────────────┼─────────────────┼─────────────────┼─────────────────┼──────┤
-//        │                   │        z        │        x        │        c        │        v        │  b  │   │  n  │        m        │        ,        │        .        │        /        │ rsft │
+//        │       rsft        │        z        │        x        │        c        │        v        │  b  │   │  n  │        m        │        ,        │        .        │        /        │ rsft │
 //        └───────────────────┴─────────────────┴─────────────────┼─────────────────┼─────────────────┼─────┤   ├─────┼─────────────────┼─────────────────┼─────────────────┴─────────────────┴──────┘
 //                                                                │      MO(4)      │      MO(1)      │ spc │   │ ent │      MO(2)      │      MO(3)      │
 //                                                                └─────────────────┴─────────────────┴─────┘   └─────┴─────────────────┴─────────────────┘
 [0] = LAYOUT_split_3x6_3(
-      KC_TRNS              , KC_Q               , KC_W               , KC_E               , KC_R               , KC_T   ,     KC_Y   , KC_U               , KC_I               , KC_O               , KC_P                  , KC_BSPC,
+      KC_TAB               , KC_Q               , KC_W               , KC_E               , KC_R               , KC_T   ,     KC_Y   , KC_U               , KC_I               , KC_O               , KC_P                  , KC_BSPC,
       MT(MOD_LCTL, KC_ESC) , MT(MOD_LCTL, KC_A) , MT(MOD_LALT, KC_S) , MT(MOD_LGUI, KC_D) , MT(MOD_LSFT, KC_F) , KC_G   ,     KC_H   , MT(MOD_RSFT, KC_J) , MT(MOD_RGUI, KC_K) , MT(MOD_LALT, KC_L) , MT(MOD_RCTL, KC_SCLN) , KC_QUOT,
-      KC_TRNS              , KC_Z               , KC_X               , KC_C               , KC_V               , KC_B   ,     KC_N   , KC_M               , KC_COMM            , KC_DOT             , KC_SLSH               , KC_RSFT,
+      KC_RSFT              , KC_Z               , KC_X               , KC_C               , KC_V               , KC_B   ,     KC_N   , KC_M               , KC_COMM            , KC_DOT             , KC_SLSH               , KC_RSFT,
                                                                        MO(4)              , MO(1)              , KC_SPC ,     KC_ENT , MO(2)              , MO(3)
 ),
 
@@ -115,50 +115,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 };
 
-#define L_BASE 0
-#define L_LOWER 1
-#define L_RAISE 2
-#define L_ADJUST 3
+#ifdef RGBLIGHT_ENABLE
+#    include "rgb.c"
+#endif
 
-void reset_hsv(void) {
-   rgblight_sethsv(hue, sat, val);
-}
-
-void fetch_rgb_values(void) {
-    hue = rgblight_get_hue();
-    sat = rgblight_get_sat();
-    val = rgblight_get_val();
-    spi = rgblight_get_speed();
-    mod = rgblight_get_mode();
-}
-
-void matrix_init_user() {
-    rgblight_mode(DEFAULT_MODE);
-    rgblight_enable();
-    reset_hsv();
-}
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    fetch_rgb_values();
-
-    switch (get_highest_layer(state)) {
-        case L_ADJUST:
-            rgblight_mode(LAYER_SWITCHED_MODE);
-            rgblight_sethsv(7, sat, val);
-            break;
-        case L_RAISE:
-            rgblight_mode(LAYER_SWITCHED_MODE);
-            rgblight_sethsv(175, sat, val);
-            break;
-        case L_LOWER:
-            rgblight_mode(LAYER_SWITCHED_MODE);
-            rgblight_sethsv(79, sat, val);
-            break;
-        default: // for any other layers, or the default layer
-            rgblight_mode(DEFAULT_MODE);
-            rgblight_sethsv(hue, sat, val);
-            break;
-    }
-
-    return state;
-};
+#ifdef OLED_ENABLE
+#    include "oled.c"
+#endif
