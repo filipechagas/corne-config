@@ -28,8 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-//#define QUICK_TAP_TERM 0
-//#define TAPPING_TERM 100
+#define QUICK_TAP_TERM 60
+#define TAPPING_TERM 150
 
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
@@ -48,9 +48,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     #define RGBLIGHT_VAL_STEP 12
 #endif
 
-#define RETRO_TAPPING
-#define PERMISSIVE_HOLD
-#define HOLD_ON_OTHER_KEY_PRESS
+// #define RETRO_TAPPING
+// #define PERMISSIVE_HOLD
+// #define HOLD_ON_OTHER_KEY_PRESS
 #undef LOCKING_SUPPORT_ENABLE
 #undef LOCKING_RESYNC_ENABLE
 #define NO_MUSIC_MODE
