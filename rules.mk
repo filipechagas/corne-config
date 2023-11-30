@@ -9,11 +9,11 @@ MOUSEKEY_ENABLE     = no
 EXTRAKEY_ENABLE     = yes
 COMBO_ENABLE        = no
 
-QMK_SETTINGS        = no
+QMK_SETTINGS        = yes
 SPLIT_KEYBOARD      = yes
 COMMAND_ENABLE      = no
 MOUSEKEY_ENABLE     = no
 CONSOLE_ENABLE      = no
-GRAVE_ESC_ENABLE    = no
+GRAVE_ESC_ENABLE    = yes
 MAGIC_ENABLE        = no
 MUSIC_ENABLE        = no
