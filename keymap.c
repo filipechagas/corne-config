@@ -50,35 +50,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                        MO(1)              , MO(4)              , MT(MOD_LGUI, KC_SPC) ,     MT(MOD_RGUI, KC_ENT) , MO(2)              , MO(3)                                                                    
 ),
 
-//        ┌──────┬──────┬──────┬──────┬──────┬────┐   ┌───────────────┬───────────────┬───────────────┬───────────┬─────────┬──────┐
-//        │ tab  │  no  │  no  │  no  │  no  │ no │   │ LGUI(LSFT(z)) │    LGUI(v)    │    LGUI(c)    │  LGUI(x)  │ LGUI(z) │      │
-//        ├──────┼──────┼──────┼──────┼──────┼────┤   ├───────────────┼───────────────┼───────────────┼───────────┼─────────┼──────┤
-//        │ esc  │ lctl │ lalt │ lgui │ lsft │ no │   │     left      │     down      │      up       │   rght    │   no    │ caps │
-//        ├──────┼──────┼──────┼──────┼──────┼────┤   ├───────────────┼───────────────┼───────────────┼───────────┼─────────┼──────┤
-//        │ lsft │  no  │  no  │  no  │  no  │ no │   │      ins      │     home      │    pAGE_UP    │ pAGE_DOWN │   end   │      │
-//        └──────┴──────┴──────┼──────┼──────┼────┤   ├───────────────┼───────────────┼───────────────┼───────────┴─────────┴──────┘
-//                             │      │  no  │ no │   │               │ RGUI(RSFT([)) │ RGUI(RSFT(])) │                             
-//                             └──────┴──────┴────┘   └───────────────┴───────────────┴───────────────┘                             
+//        ┌──────┬──────┬──────┬──────┬──────┬─────┐   ┌───────────────┬───────────────┬───────────────┬───────────┬─────────┬──────┐
+//        │ tab  │  no  │  no  │  no  │  no  │ no  │   │ LGUI(LSFT(z)) │    LGUI(v)    │    LGUI(c)    │  LGUI(x)  │ LGUI(z) │      │
+//        ├──────┼──────┼──────┼──────┼──────┼─────┤   ├───────────────┼───────────────┼───────────────┼───────────┼─────────┼──────┤
+//        │ esc  │ lctl │ lalt │ lgui │ lsft │ no  │   │     left      │     down      │      up       │   rght    │   no    │ caps │
+//        ├──────┼──────┼──────┼──────┼──────┼─────┤   ├───────────────┼───────────────┼───────────────┼───────────┼─────────┼──────┤
+//        │ lsft │      │      │      │      │     │   │      ins      │     home      │    pAGE_UP    │ pAGE_DOWN │   end   │      │
+//        └──────┴──────┴──────┼──────┼──────┼─────┤   ├───────────────┼───────────────┼───────────────┼───────────┴─────────┴──────┘
+//                             │      │  no  │ no  │   │               │ RGUI(RSFT([)) │ RGUI(RSFT(])) │                             
+//                             └──────┴──────┴─────┘   └───────────────┴───────────────┴───────────────┘                             
 [1] = LAYOUT_split_3x6_3(
       KC_TAB  , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     LGUI(LSFT(KC_Z)) , LGUI(KC_V)          , LGUI(KC_C)          , LGUI(KC_X)   , LGUI(KC_Z) , KC_TRNS,
       KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_LEFT          , KC_DOWN             , KC_UP               , KC_RIGHT     , XXXXXXX    , KC_CAPS,
-      KC_LSFT , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_INS           , KC_HOME             , KC_PAGE_UP          , KC_PAGE_DOWN , KC_END     , KC_TRNS,
+      KC_LSFT , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS , KC_TRNS ,     KC_INS           , KC_HOME             , KC_PAGE_UP          , KC_PAGE_DOWN , KC_END     , KC_TRNS,
                                     _______ , XXXXXXX , XXXXXXX ,     KC_TRNS          , RGUI(RSFT(KC_LBRC)) , RGUI(RSFT(KC_RBRC))                                      
 ),
 
 //        ┌──────┬───┬───┬───┬───┬───┐   ┌────┬──────┬──────┬──────┬──────┬──────┐
 //        │  `   │ { │ & │ * │ ( │ } │   │ no │  (   │  )   │  -   │  =   │ bspc │
 //        ├──────┼───┼───┼───┼───┼───┤   ├────┼──────┼──────┼──────┼──────┼──────┤
-//        │  -   │ : │ $ │ % │ ^ │ + │   │ -  │ rsft │ rgui │ ralt │ rctl │  `   │
+//        │  :   │ - │ $ │ % │ ^ │ + │   │ =  │ rsft │ rgui │ ralt │ rctl │  `   │
 //        ├──────┼───┼───┼───┼───┼───┤   ├────┼──────┼──────┼──────┼──────┼──────┤
-//        │ lsft │ ~ │ ! │ @ │ # │ | │   │ _  │  +   │  {   │  }   │  |   │  ~   │
+//        │ lsft │ ~ │ ! │ @ │ # │ | │   │ [  │  ]   │  {   │  }   │  (   │  )   │
 //        └──────┴───┴───┼───┼───┼───┤   ├────┼──────┼──────┼──────┴──────┴──────┘
 //                       │ ( │ ) │ _ │   │ no │      │  no  │                     
 //                       └───┴───┴───┘   └────┴──────┴──────┘                     
 [2] = LAYOUT_split_3x6_3(
       KC_GRAVE , KC_LCBR , KC_AMPR , KC_ASTR , KC_LPRN , KC_RCBR ,     XXXXXXX , KC_LPRN , KC_RPRN , KC_MINS , KC_EQL  , KC_BSPC,
-      KC_MINS  , KC_COLN , KC_DLR  , KC_PERC , KC_CIRC , KC_PLUS ,     KC_MINS , KC_RSFT , KC_RGUI , KC_RALT , KC_RCTL , KC_GRV ,
-      KC_LSFT  , KC_TILD , KC_EXLM , KC_AT   , KC_HASH , KC_PIPE ,     KC_UNDS , KC_PLUS , KC_LCBR , KC_RCBR , KC_PIPE , KC_TILD,
+      KC_COLN  , KC_MINS , KC_DLR  , KC_PERC , KC_CIRC , KC_PLUS ,     KC_EQL  , KC_RSFT , KC_RGUI , KC_RALT , KC_RCTL , KC_GRV ,
+      KC_LSFT  , KC_TILD , KC_EXLM , KC_AT   , KC_HASH , KC_PIPE ,     KC_LBRC , KC_RBRC , KC_LCBR , KC_RCBR , KC_LPRN , KC_RPRN,
                                      KC_LPRN , KC_RPRN , KC_UNDS ,     XXXXXXX , _______ , XXXXXXX                              
 ),
 
@@ -99,19 +99,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 //        ┌─────┬──────┬──────┬──────┬──────┬────┐   ┌───┬───┬───┬───┬───┬──────┐
-//        │     │  no  │  no  │  no  │  no  │ no │   │ [ │ 7 │ 8 │ 9 │ ] │ bspc │
+//        │     │  no  │  no  │  no  │  no  │ no │   │ [ │ 7 │ 8 │ 9 │ - │ bspc │
 //        ├─────┼──────┼──────┼──────┼──────┼────┤   ├───┼───┼───┼───┼───┼──────┤
-//        │ esc │ lctl │ lalt │ lgui │ lsft │ no │   │ = │ 4 │ 5 │ 6 │ ; │ ent  │
+//        │ esc │ lctl │ lalt │ lgui │ lsft │ no │   │ = │ 4 │ 5 │ 6 │ + │  ;   │
 //        ├─────┼──────┼──────┼──────┼──────┼────┤   ├───┼───┼───┼───┼───┼──────┤
-//        │ no  │  no  │  no  │  no  │  no  │ no │   │ ` │ 1 │ 2 │ 3 │ \ │  no  │
+//        │ no  │  no  │  no  │  no  │  no  │ _  │   │ , │ 1 │ 2 │ 3 │ \ │ ent  │
 //        └─────┴──────┴──────┼──────┼──────┼────┤   ├───┼───┼───┼───┴───┴──────┘
-//                            │  no  │      │ no │   │ - │ 0 │ . │               
+//                            │  no  │      │ no │   │ ] │ 0 │ . │               
 //                            └──────┴──────┴────┘   └───┴───┴───┘               
 [4] = LAYOUT_split_3x6_3(
-      KC_TRNS , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_LBRC , KC_7 , KC_8   , KC_9 , KC_RBRC , KC_BSPC,
-      KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_EQL  , KC_4 , KC_5   , KC_6 , KC_SCLN , KC_ENT ,
-      XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_GRV  , KC_1 , KC_2   , KC_3 , KC_BSLS , XXXXXXX,
-                                    XXXXXXX , _______ , XXXXXXX ,     KC_MINS , KC_0 , KC_DOT                           
+      KC_TRNS , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_LBRC , KC_7 , KC_8   , KC_9 , KC_MINS , KC_BSPC,
+      KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_EQL  , KC_4 , KC_5   , KC_6 , KC_PLUS , KC_SCLN,
+      XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_UNDS ,     KC_COMM , KC_1 , KC_2   , KC_3 , KC_BSLS , KC_ENT ,
+                                    XXXXXXX , _______ , XXXXXXX ,     KC_RBRC , KC_0 , KC_DOT                           
 )
 };
 
