@@ -67,18 +67,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 //        ┌──────┬───┬───┬───┬───┬───┐   ┌────┬──────┬──────┬──────┬──────┬──────┐
-//        │  `   │ { │ & │ * │ ( │ } │   │ no │  (   │  )   │  -   │  =   │ bspc │
+//        │  `   │ { │ & │ * │ ( │ } │   │ no │  {   │  }   │  -   │  =   │ bspc │
 //        ├──────┼───┼───┼───┼───┼───┤   ├────┼──────┼──────┼──────┼──────┼──────┤
 //        │  :   │ - │ $ │ % │ ^ │ + │   │ =  │ rsft │ rgui │ ralt │ rctl │  `   │
 //        ├──────┼───┼───┼───┼───┼───┤   ├────┼──────┼──────┼──────┼──────┼──────┤
-//        │ lsft │ ~ │ ! │ @ │ # │ | │   │ [  │  ]   │  {   │  }   │  (   │  )   │
+//        │ lsft │ ~ │ ! │ @ │ # │ | │   │ _  │  [   │  ]   │  (   │  )   │ rsft │
 //        └──────┴───┴───┼───┼───┼───┤   ├────┼──────┼──────┼──────┴──────┴──────┘
 //                       │ ( │ ) │ _ │   │ no │      │  no  │                     
 //                       └───┴───┴───┘   └────┴──────┴──────┘                     
 [2] = LAYOUT_split_3x6_3(
-      KC_GRAVE , KC_LCBR , KC_AMPR , KC_ASTR , KC_LPRN , KC_RCBR ,     XXXXXXX , KC_LPRN , KC_RPRN , KC_MINS , KC_EQL  , KC_BSPC,
+      KC_GRAVE , KC_LCBR , KC_AMPR , KC_ASTR , KC_LPRN , KC_RCBR ,     XXXXXXX , KC_LCBR , KC_RCBR , KC_MINS , KC_EQL  , KC_BSPC,
       KC_COLN  , KC_MINS , KC_DLR  , KC_PERC , KC_CIRC , KC_PLUS ,     KC_EQL  , KC_RSFT , KC_RGUI , KC_RALT , KC_RCTL , KC_GRV ,
-      KC_LSFT  , KC_TILD , KC_EXLM , KC_AT   , KC_HASH , KC_PIPE ,     KC_LBRC , KC_RBRC , KC_LCBR , KC_RCBR , KC_LPRN , KC_RPRN,
+      KC_LSFT  , KC_TILD , KC_EXLM , KC_AT   , KC_HASH , KC_PIPE ,     KC_UNDS , KC_LBRC , KC_RBRC , KC_LPRN , KC_RPRN , KC_RSFT,
                                      KC_LPRN , KC_RPRN , KC_UNDS ,     XXXXXXX , _______ , XXXXXXX                              
 ),
 
