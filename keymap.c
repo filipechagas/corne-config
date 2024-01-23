@@ -99,19 +99,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 //        ┌─────┬──────┬──────┬──────┬──────┬────┐   ┌───┬───┬───┬───┬───┬──────┐
-//        │     │  no  │  no  │  no  │  no  │ no │   │ [ │ 7 │ 8 │ 9 │ - │ bspc │
+//        │     │  no  │  no  │  no  │  no  │ no │   │ [ │ 7 │ 8 │ 9 │ ] │ bspc │
 //        ├─────┼──────┼──────┼──────┼──────┼────┤   ├───┼───┼───┼───┼───┼──────┤
 //        │ esc │ lctl │ lalt │ lgui │ lsft │ no │   │ = │ 4 │ 5 │ 6 │ + │  ;   │
 //        ├─────┼──────┼──────┼──────┼──────┼────┤   ├───┼───┼───┼───┼───┼──────┤
-//        │ no  │  no  │  no  │  no  │  no  │ _  │   │ , │ 1 │ 2 │ 3 │ \ │ ent  │
+//        │ no  │  no  │  no  │  no  │  no  │ _  │   │ ` │ 1 │ 2 │ 3 │ \ │  /   │
 //        └─────┴──────┴──────┼──────┼──────┼────┤   ├───┼───┼───┼───┴───┴──────┘
-//                            │  no  │      │ no │   │ ] │ 0 │ . │               
+//                            │  no  │      │ no │   │ - │ 0 │ . │               
 //                            └──────┴──────┴────┘   └───┴───┴───┘               
 [4] = LAYOUT_split_3x6_3(
-      KC_TRNS , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_LBRC , KC_7 , KC_8   , KC_9 , KC_MINS , KC_BSPC,
-      KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_EQL  , KC_4 , KC_5   , KC_6 , KC_PLUS , KC_SCLN,
-      XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_UNDS ,     KC_COMM , KC_1 , KC_2   , KC_3 , KC_BSLS , KC_ENT ,
-                                    XXXXXXX , _______ , XXXXXXX ,     KC_RBRC , KC_0 , KC_DOT                           
+      KC_TRNS , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_LBRC  , KC_7 , KC_8   , KC_9 , KC_RBRC , KC_BSPC,
+      KC_ESC  , KC_LCTL , KC_LALT , KC_LGUI , KC_LSFT , XXXXXXX ,     KC_EQL   , KC_4 , KC_5   , KC_6 , KC_PLUS , KC_SCLN,
+      XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , KC_UNDS ,     KC_GRAVE , KC_1 , KC_2   , KC_3 , KC_BSLS , KC_SLSH,
+                                    XXXXXXX , _______ , XXXXXXX ,     KC_MINS  , KC_0 , KC_DOT                           
 )
 };
 
