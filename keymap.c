@@ -115,6 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 };
 
+#    include "combos.c"
 #ifdef RGBLIGHT_ENABLE
 #    include "rgb.c"
 #endif
