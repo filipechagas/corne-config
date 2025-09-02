@@ -63,6 +63,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_RESYNC_ENABLE
 #define NO_MUSIC_MODE
 
-#undef COMBO_COUNT
-#define COMBO_COUNT 1
-#define COMBO_TERM 150
+#define COMBO_TERM 20
