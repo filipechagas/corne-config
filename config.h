@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-//#define USE_MATRIX_I2C
+// #define USE_MATRIX_I2C
 
 /* Select hand configuration */
 
@@ -28,33 +28,43 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define QUICK_TAP_TERM 60
-#define TAPPING_TERM 150
+// ZMK port timing settings
+#define QUICK_TAP_TERM 175
+#define TAPPING_TERM 280
+#define PERMISSIVE_HOLD
+#define REQUIRE_PRIOR_IDLE_MS 50
 
+// Space bar behavior matching ZMK "tap-unless-interrupted"
+#define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+#define TAPPING_TERM_PER_KEY
 
-#define L_BASE 0
-#define L_NAV 1
-#define L_SYM 2
-#define L_ADJUST 3
-#define L_NUMBER 4
+// Layer definitions matching ZMK
+#define QWERTY_L 0
+#define NAV_L 1
+#define SYM_L 2
+#define ADJ_L 3
+#define NUM_L 4
+#define FUN_L 5
+
+// Enable caps word
+#define CAPS_WORD_IDLE_TIMEOUT 5000
 
 #ifdef RGBLIGHT_ENABLE
-    #define RGBLIGHT_EFFECT_BREATHING
-    #define RGBLIGHT_EFFECT_RAINBOW_MOOD
-    #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-    #define RGBLIGHT_EFFECT_SNAKE
-    #define RGBLIGHT_EFFECT_KNIGHT
-    #define RGBLIGHT_EFFECT_CHRISTMAS
-    #define RGBLIGHT_EFFECT_STATIC_GRADIENT
-    #define RGBLIGHT_EFFECT_RGB_TEST
-    #define RGBLIGHT_EFFECT_ALTERNATING
-    #define RGBLIGHT_EFFECT_TWINKLE
-    #define RGBLIGHT_LIMIT_VAL 120
-    #define RGBLIGHT_HUE_STEP 16
-    #define RGBLIGHT_SAT_STEP 16
-    #define RGBLIGHT_VAL_STEP 12
+#    define RGBLIGHT_EFFECT_BREATHING
+#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+#    define RGBLIGHT_EFFECT_SNAKE
+#    define RGBLIGHT_EFFECT_KNIGHT
+#    define RGBLIGHT_EFFECT_CHRISTMAS
+#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
+#    define RGBLIGHT_EFFECT_RGB_TEST
+#    define RGBLIGHT_EFFECT_ALTERNATING
+#    define RGBLIGHT_EFFECT_TWINKLE
+#    define RGBLIGHT_LIMIT_VAL 120
+#    define RGBLIGHT_HUE_STEP 16
+#    define RGBLIGHT_SAT_STEP 16
+#    define RGBLIGHT_VAL_STEP 12
 #endif
-
 
 // #define RETRO_TAPPING
 // #define PERMISSIVE_HOLD
@@ -63,4 +73,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef LOCKING_RESYNC_ENABLE
 #define NO_MUSIC_MODE
 
-#define COMBO_TERM 20
+// Combo settings matching ZMK timing
+#define COMBO_TERM 25

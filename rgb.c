@@ -1,5 +1,5 @@
 void reset_hsv(void) {
-   rgblight_sethsv(hue, sat, val);
+    rgblight_sethsv(hue, sat, val);
 }
 
 void fetch_rgb_values(void) {
@@ -20,19 +20,19 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     fetch_rgb_values();
 
     switch (get_highest_layer(state)) {
-        case L_ADJUST:
+        case ADJ_L:
             rgblight_mode(LAYER_SWITCHED_MODE);
             rgblight_sethsv(7, sat, val);
             break;
-        case L_SYM:
+        case SYM_L:
             rgblight_mode(LAYER_SWITCHED_MODE);
             rgblight_sethsv(175, sat, val);
             break;
-        case L_NAV:
+        case NAV_L:
             rgblight_mode(LAYER_SWITCHED_MODE);
             rgblight_sethsv(79, sat, val);
             break;
-        case L_NUMBER:
+        case NUM_L:
             rgblight_mode(LAYER_SWITCHED_MODE);
             rgblight_sethsv(225, sat, val);
             break;
